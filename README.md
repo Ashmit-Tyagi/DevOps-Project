@@ -64,6 +64,32 @@ This Bash script automates backups with optional compression. It accepts source 
 
 ![Screenshot from 2024-11-29 00-44-28](https://github.com/user-attachments/assets/90f07910-a54f-4230-9913-22700f7acf02)
 
+# Build Java app and trigger pipeline
+
+This ensures the installation of Java 17 with the specified version.
+
+![Screenshot from 2024-11-29 00-48-03](https://github.com/user-attachments/assets/bb51e413-cd9f-4027-9fc1-d89ac4f7f10e)
+
+This ensures the installation of Maven 3.9.9
+
+![Screenshot from 2024-11-29 00-48-40](https://github.com/user-attachments/assets/b5ede735-9ea0-4231-9179-11cfe802360d)
+
+This Jenkins pipeline automates the build-test-deploy process for a Java project. It checks out the code from a Git repository, builds it using Maven (skipping tests during packaging), and then executes tests with results published via JUnit. The "Deliver" stage runs a deployment script (deliver.sh). The pipeline allows branch selection via parameters and triggers builds on GitHub pushes. Using Maven 3.9.9 and Java 17, it enforces a 10-minute execution timeout. Post-build actions include archiving artifacts, cleaning up the workspace, and logging the pipeline status (success or failure). This workflow ensures efficient, automated, and reproducible builds with integrated testing and deployment.
+
+![Screenshot from 2024-11-29 00-55-59](https://github.com/user-attachments/assets/c100be30-2c7f-4ba6-ba0b-86841f0ece6e)
+
+The Jenkins pipeline now includes the GitHub repository and allows branch selection via a parameter. 
+
+![Screenshot from 2024-11-29 00-57-58](https://github.com/user-attachments/assets/7d5c8417-3417-42e9-8269-2a682275da34)
+
+In the pipeline section, set the definition to **Pipeline script from SCM**, specifying the Git repository and using `*/main` as the branch specifier.
+
+![Screenshot from 2024-11-29 00-58-50](https://github.com/user-attachments/assets/d35f768f-8b7d-4980-bf9f-2d6e5736ad2d)
+
+The script path is specified as `example-app-pipeline/Jenkinsfile`, where the pipeline script is executed from.
+
+![Screenshot from 2024-11-29 00-59-51](https://github.com/user-attachments/assets/c54f2efe-b3da-477a-8bc9-c2e09605e333)
+
 
 
 
