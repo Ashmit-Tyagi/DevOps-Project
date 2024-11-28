@@ -18,7 +18,7 @@ Setting up a node for a master-slave architecture by utilizing the private key, 
 
 # Setup Role based authorization
 
-Create a role named project_view and give it read permission.
+Create a role named project_view and give it read permission from overall.
 
 ![Screenshot from 2024-11-29 00-05-41](https://github.com/user-attachments/assets/d6f35d8d-e2a5-49bc-a4f1-d0b6b3edd53b)
 
