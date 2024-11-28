@@ -38,7 +38,7 @@ Login from the project user
 
 ![image](https://github.com/user-attachments/assets/eb7f5faa-e112-4c55-a236-45ca81b055f8)
 
-Now,we will see the jobs with the same pattern.
+Now, we will see the jobs with the same pattern.
 
 ![Screenshot from 2024-11-29 00-11-32](https://github.com/user-attachments/assets/9066342b-f791-48c1-ad78-7245e1e92806)
 
