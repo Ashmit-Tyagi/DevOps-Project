@@ -42,6 +42,34 @@ Now,we will see the jobs with the same pattern.
 
 ![Screenshot from 2024-11-29 00-11-32](https://github.com/user-attachments/assets/9066342b-f791-48c1-ad78-7245e1e92806)
 
+# Create a pipeline to execute a shell script, on git, on scripting task, Monitor disk utlization and send mail if > 80%, Process Management, take inputs, check for errors, cleanup, backup, logging.
+
+The scripts required to execute the pipeline, including `JenkinsFile`, `proc.sh`, `script1.sh`, and `script2.sh`, are available on GitHub.
+
+![Screenshot from 2024-11-29 00-34-00](https://github.com/user-attachments/assets/330c807b-5dc3-482c-a044-3a82441c2be6)
+
+The Jenkins pipeline performs automation in three stages: **Git Checkout** (cloning the repository), **Disk Usage Check** (executing `script1.sh`), and **Process Management** (executing `proc.sh`). It is configured to run hourly and sends failure notifications via email, providing job details and a link to the console output for troubleshooting.
+
+![Screenshot from 2024-11-29 00-35-06](https://github.com/user-attachments/assets/541aecb8-ba6c-4f2c-9758-d80e6551a889)
+
+This Bash script helps monitor system resources by identifying processes with high resource consumption. It leverages `ps aux` to sort and display the top processes using the most CPU and memory. Furthermore, it detects zombie processes (those in the "Z" state) using `awk`, facilitating effective process management and troubleshooting.
+
+![Screenshot from 2024-11-29 00-37-32](https://github.com/user-attachments/assets/5db8d1c1-37c4-4873-aaa7-29ad494fe786)
+
+This Bash script monitors the disk usage of the root directory by usage percentage. If the usage exceeds 80%, it displays a warning message and exits with an error code. Otherwise, it confirms that the usage is within normal limits. This proactive approach helps admin address potential disk space issues.
+
+![Screenshot from 2024-11-29 00-39-17](https://github.com/user-attachments/assets/bc63cf62-cc31-4cb5-9843-761dc9788a0b)
+
+This Bash script automates backups with optional compression. It accepts source and destination directories, validates them, and creates the destination if needed. Backups are timestamped for uniqueness, compressed with the `-c` flag, or copied directly. Logs track operations, and backups older than 7 days are deleted to save space, ensuring efficient and reliable data protection.
+
+![Screenshot from 2024-11-29 00-44-28](https://github.com/user-attachments/assets/90f07910-a54f-4230-9913-22700f7acf02)
+
+
+
+
+
+
+
 
 
 
